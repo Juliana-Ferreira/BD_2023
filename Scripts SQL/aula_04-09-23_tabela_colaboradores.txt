@@ -1,0 +1,16 @@
+CREATE TABle colaboradores (
+  id int(6),
+  nome varchar(50),
+  cpf varchar(12),
+  cargo varchar(50),
+  salario decimal(10,2)
+);
+
+INSERT into colaboradores (id, nome, cpf, cargo, salario)
+VALUES (101010, 'Ana Paula Padrão', '00011122233', 'Assistente', 3200.00),
+(111111, 'Marcia Teixeira', '11122233344', 'Gerente', 15000.00),
+(121212, 'Paulo André Alves', '22233344455', 'Assistente', 3000.00),
+(131313, 'Joao Marcelo Silva', '33344455566', 'Auxiliar I', 4350.50),
+(141414, 'Luis Felipe Ferreira', '44455566677', 'Auxiliar II', 4730.20);
+
+SELECT * from colaboradores;

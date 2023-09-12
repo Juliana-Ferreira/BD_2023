@@ -1,0 +1,16 @@
+CREATE TABLE aluno (
+  RA varchar (6),
+  nome varchar (50),
+  data_nascimento varchar (10),
+  endereco varchar (120),
+  email varchar (50)
+  );
+  
+  INSERT INTO aluno (RA, nome, data_nascimento, endereco, email) 
+  VALUES ('172008', 'Juliana', '15/02/1999', 'alameda franca, 1071 - Nova Sorocaba', 'juliana@gmail.com'),
+  ('172009', 'Camila', '20/01/1999', 'francisco bueno, 472 - Ana Maria', 'camila@gmail.com'),
+  ('172010', 'André Felipe', '02/04/1997', 'rua das flores, 83 - Vila jardim', 'andrefelipe@gmail.com'),
+  ('172011', 'Jorge Henrique', '14/12/2000', 'rua principal, 12 - Jd. Cidade', 'jorge@hotmail.com'),
+  ('172012', 'Priscila', '28/05/1998', 'avenida carreto, 54 - Bairro 13', 'priscila@hotmail.com');
+  
+  SELECT * FROM aluno;
