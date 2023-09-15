@@ -1,0 +1,29 @@
+CREATE TABLE autor (
+  id varchar (4) PRIMARY KEY,
+  nome varchar (50),
+  email varchar (50),
+  nacionalidade varchar (50),
+  data_nascimento date
+);
+
+CREATE TABLE livro (
+  isbn varchar (10) PRIMARY KEY,
+  titulo varchar (100),
+  qtd_paginas int (4),
+  acabamento varchar (20),
+  editora varchar (30),
+  id_autor varchar (4),
+  FOREIGN KEY(id_autor) REFERENCES autor(id)
+);
+  
+INSERT INTO autor (id, nome, email, nacionalidade, data_nascimento) 
+VALUES ('0001', 'José Moreto', 'jose.moreto@email.com', 'Brasileiro', '1995-06-30'),
+('0002', 'Carla Dias', 'carla.dias@email.com', 'Brasileira', '1999-02-15'),
+('0003', 'John Mayer', 'john.mayer@email.com', 'Americano', '1990-03-21');
+  
+INSERT INTO livro (isbn, titulo, qtd_paginas, acabamento, editora, id_autor) 
+VALUES ('1111111112', 'A Dinâmica', 223, 'Brochura', 'Estante', '0001'),
+('2222222223', 'Amor e Trevas', 150, 'Brochura', 'Estante', '0002'),
+('3333333334', 'Como Tudo Começou', 285, 'Brochura', 'Estante', '0003');
+  
+SELECT * FROM livro l INNER JOIN autor a on a.id = l.id_autor;

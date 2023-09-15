@@ -1,0 +1,16 @@
+CREATE TABLE automovel (
+  id varchar (6) PRIMARY KEY,
+  placa varchar (10),
+  modelo varchar (20),
+  ano int (4),
+  montadora varchar (20),
+  site_montadora varchar (200),
+  logo_montadora varchar (200)
+);
+  
+INSERT INTO automovel (id, placa, modelo, ano, montadora, site_montadora, logo_montadora) 
+VALUES ('000001', 'BOB1234', 'Onix', 2024, 'Chevrolet', 'https://www.chevrolet.com.br/', 'logochevrolet.png'),
+('000002', 'BYE1887', 'Gol', 2021, 'Volkswagen', 'https://www.vw.com.br/pt.html', 'logovw.png'),
+('000003', 'CAR9555', 'HB20', 2015, 'Hyundai', 'https://hyundai.com.br/', 'logohyundai.png');
+  
+SELECT * FROM automovel;

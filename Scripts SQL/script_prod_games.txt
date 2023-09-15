@@ -1,0 +1,27 @@
+CREATE TABLE projeto (
+  id varchar (4) PRIMARY KEY,
+  nome varchar (50),
+  genero varchar (20),
+  faixa_etaria int (2),
+  data_lancamento date
+);
+
+CREATE TABLE desenvolvedor (
+  cpf varchar (11) PRIMARY KEY,
+  nome varchar (50),
+  data_nascimento date,
+  id_projeto varchar (4),
+  FOREIGN KEY(id_projeto) REFERENCES projeto(id)
+);
+  
+INSERT INTO projeto (id, nome, genero, faixa_etaria, data_lancamento) 
+VALUES ('0001', 'Bang Bang', 'Tiro', 12, '2023-04-09'),
+('0002', 'Thor: Amor e Trovão', 'Ação', 14, '2024-02-23'),
+('0003', 'Candy Crush', 'Plataforma', 10, '2025-07-01');
+  
+INSERT INTO desenvolvedor (cpf, nome, data_nascimento, id_projeto) 
+VALUES ('11111111122', 'Michael Scott', '1995-06-30', '0001'),
+('22222222233', 'Pam Basley', '1999-02-15', '0002'),
+('33333333344', 'Bob Vance', '1990-03-21', '0003');
+  
+SELECT * FROM projeto p INNER JOIN desenvolvedor d on p.id = d.id_projeto;
