@@ -1,0 +1,15 @@
+CREATE TABLE produto (
+  codigo varchar (10) PRIMARY KEY,
+  preco decimal (10, 2),
+  quantidade int (5),
+  marca varchar (50),
+  sac varchar (11),
+  nacionalidade varchar (50)
+);
+  
+INSERT INTO produto (codigo, preco, quantidade, marca, sac, nacionalidade) 
+VALUES ('0101010101', 12.5, 320, 'Bauducco', '08007011599', 'Italiano'),
+('0202020202', 3.3, 1028, 'Dove', '08007077512', 'Inglês'),
+('0303030303', 4.2, 750, 'Renata', '0800115855', 'Brasileiro');
+  
+SELECT * FROM produto;
