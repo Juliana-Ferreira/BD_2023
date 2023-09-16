@@ -140,14 +140,79 @@ Um supermercado cadastra seus produtos. Um produto é identificado por seu nome,
 
 ![MER Supermercado](img_MER/MER_supermercado.png)
 
-` Aqui vai o script SQL ` 
+```
+CREATE TABLE produto (
+  codigo varchar (10) PRIMARY KEY,
+  preco decimal (10, 2),
+  quantidade int (5),
+  marca varchar (50),
+  sac varchar (11),
+  nacionalidade varchar (50)
+);
+  
+INSERT INTO produto (codigo, preco, quantidade, marca, sac, nacionalidade) 
+VALUES ('0101010101', 12.5, 320, 'Bauducco', '08007011599', 'Italiano'),
+('0202020202', 3.3, 1028, 'Dove', '08007077512', 'Inglês'),
+('0303030303', 4.2, 750, 'Renata', '0800115855', 'Brasileiro');
+  
+SELECT * FROM produto;
+```
 
 #### 6. Videoteca
 Uma videoteca precisa cadastrar o título, duração, idioma original e preço de cada filme. É necessário cadastrar também o elenco de cada filme onde se registra o nome, data de nascimento, nacionalidade de cada ator/atriz. Opcionalmente, inclua o cadastro de diretores com atributos que julgar necessários.
 
-![MER Supermercado](img_MER/MER_videoteca.png)
+![MER Videoteca](img_MER/MER_videoteca.png)
 
-` Aqui vai o script SQL ` 
+```
+CREATE TABLE filme (
+  id varchar (8) PRIMARY KEY,
+  titulo varchar (50),
+  duracao_min int (3),
+  idioma varchar (50),
+  preco decimal (10, 2)
+);
+
+CREATE TABLE diretor (
+  id varchar (4) PRIMARY KEY,
+  nome varchar (80),
+  data_nascimento date,
+  nacionalidade varchar (50),
+  id_filme varchar (8),
+  id_elenco varchar (4),
+  FOREIGN KEY(id_filme) REFERENCES filme(id)
+  FOREIGN KEY(id_elenco) REFERENCES elenco(id)
+);
+
+CREATE TABLE elenco (
+  id varchar (8) PRIMARY KEY,
+  nome varchar (100),
+  data_nascimento date,
+  nacionalidade varchar (50),
+  id_filme varchar (8),
+  id_diretor varchar (4),
+  FOREIGN KEY(id_filme) REFERENCES filme(id)
+  FOREIGN KEY(id_diretor) REFERENCES diretor(id)
+);
+
+INSERT INTO filme (id, titulo, duracao_min, idioma, preco) 
+VALUES ('01010101', 'Star Wars: Episódio 1 – A Ameaça Fantasma', 136, 'Português BR', 15),
+('02020202', 'Star Wars: Episódio 2 – Ataque dos Clones', 142, 'Português BR', 18),
+('03030303', 'Star Wars: Episódio 3 – A Vingança dos Sith', 140, 'Português BR', 20);
+  
+INSERT INTO diretor (id, nome, data_nascimento, nacionalidade, id_filme, id_elenco) 
+VALUES ('1111', 'George Lucas', '1944-05-14', 'Norte-americano', '01010101', '0001'),
+('2222', 'George Lucas', '1944-05-14', 'Norte-americano', '02020202', '0002'),
+('3333', 'George Lucas', '1944-05-14', 'Norte-americano', '03030303', '0003');
+
+INSERT INTO elenco (id, nome, data_nascimento, nacionalidade, id_filme, id_diretor)
+VALUES ('0001', 'Natalie Portman', '1981-06-09', 'Israelita norte-americana', '01010101', '1111'),
+('0002', 'Hayden Christensen', '1981-04-19', 'Canadense', '02020202', '2222'),
+('0003', 'Ewan McGregor', '1971-03-31', 'Britânico norte-americano', '03030303', '3333');
+  
+SELECT * FROM filme;
+SELECT * FROM diretor;
+SELECT * FROM elenco;
+```
 
 ### Exercícios disponibilizados na aula do dia 04/09/2023:
 
