@@ -1,6 +1,6 @@
 # Banco de Dados
 
-- Acesse a pasta com os arquivos da AC2: `link`
+- Acesse a pasta com os [arquivos da AC2](https://github.com/Juliana-Ferreira/BD_2023/tree/main/AC2).
 
 ### Etapa 1
 Crie uma tabela Produtos com os seguintes itens id_produto; nome; preço; estoque; perecível; marca; nacionalidade;
@@ -40,9 +40,9 @@ values ("Arroz branco", 28.50, 135, 'N', "Tio João", "Brasileiro"),
 ```
 
 ### Etapa 2
-Gere um relatório informando quantos produtos estão cadastrados;
+Gere um [relatório](https://github.com/Juliana-Ferreira/BD_2023/blob/main/AC2/relatorio_qtd_produtos.csv) informando quantos produtos estão cadastrados;
 
-Gere um relatório informando o preço médio dos produtos;
+Gere um [relatório](https://github.com/Juliana-Ferreira/BD_2023/blob/main/AC2/relatorio_preco_medio.csv) informando o preço médio dos produtos;
 
 Selecione a média dos preços dos produtos em 2 grupos: perecíveis e não perecíveis;
 
