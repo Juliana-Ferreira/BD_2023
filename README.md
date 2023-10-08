@@ -40,9 +40,9 @@ values ("Arroz branco", 28.50, 135, 'N', "Tio João", "Brasileiro"),
 ```
 
 ### Etapa 2
-Gere um [relatório](https://github.com/Juliana-Ferreira/BD_2023/blob/main/AC2/relatorio_qtd_produtos.csv) informando quantos produtos estão cadastrados;
+Gere um [relatório](https://github.com/Juliana-Ferreira/BD_2023/blob/main/AC2/Atividade%2002-10-23/relatorio_qtd_produtos.csv) informando quantos produtos estão cadastrados;
 
-Gere um [relatório](https://github.com/Juliana-Ferreira/BD_2023/blob/main/AC2/relatorio_preco_medio.csv) informando o preço médio dos produtos;
+Gere um [relatório](https://github.com/Juliana-Ferreira/BD_2023/blob/main/AC2/Atividade%2002-10-23/relatorio_preco_medio.csv) informando o preço médio dos produtos;
 
 Selecione a média dos preços dos produtos em 2 grupos: perecíveis e não perecíveis;
 
