@@ -84,4 +84,4 @@ select nacionalidade, sum(estoque) from produtos group by nacionalidade;
 
 ### Print da tela do WorkBench
 
-![print](AC2/print_workbench.png)
+![print](AC2/Atividade%2002-10-23/print_workbench.png)
